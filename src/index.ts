@@ -6,6 +6,7 @@ import type { IBaseTimer } from "./timers/base";
 import { greentimer } from "./timers/greentimer";
 import { iso8601 } from "./timers/iso8601";
 import { simple } from "./timers/simple";
+import { stackedH, stackedV } from "./timers/stacked";
 
 export interface IAppConfig extends IFormatOptions, ITimerStyle {
     controls: boolean;
@@ -18,6 +19,8 @@ const bases: Record<string, IBaseTimer> = {
     iso8601,
     greentimer,
     simple,
+    stackedH,
+    stackedV,
 };
 
 const loadConfig = (): [IAppConfig, IFormatOptions & ITimerStyle] => {
