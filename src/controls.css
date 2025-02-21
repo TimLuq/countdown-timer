@@ -1,0 +1,90 @@
+#time {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+#controls {
+    padding: 1.4em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 24em);
+    font-family: "Noto Sans", sans-serif;
+    max-width: 100vw;
+    box-sizing: border-box;
+    justify-content: center;
+}
+#controls > fieldset {
+    position: relative;
+    padding: 1.4em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    gap: 1em;
+    max-width: calc(100vw - 2.8em);
+    align-content: start;
+}
+#controls > fieldset > div {
+    min-height: 5.5em;
+}
+#controls > fieldset > button.clean {
+    position: absolute;
+    right: 4px;
+    top: -1.0em;
+    padding: 4px;
+    font-size: 1.4em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background: background;
+}
+#controls > fieldset > button.clean > span {
+    opacity: 0.8;
+}
+#controls > fieldset > button.clean:hover > span {
+    display: inline-block;
+    opacity: 1;
+    /* animation to rotate the span 30deg for a sweeping effect */
+    animation: sweep 1.2s ease-in-out infinite;
+}
+#controls label,#controls input,#controls select,#controls h4 {
+    display: inline-block;
+    min-width: 12em;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+#controls a.gh {
+    display: inline-block;
+}
+#controls a.gh::before {
+    content: " ";
+    display: inline-block;
+    background: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 0.4em 0 0;
+    height: 24px;
+    width: 24px;
+    box-sizing: content-box;
+    vertical-align: middle;
+    border: white solid 0px;
+}
+#controls a.gh > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes sweep {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
